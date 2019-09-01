@@ -1,0 +1,180 @@
+*{
+    font-family: 'Roboto';
+    font-weight: 200;
+}
+#card:hover {
+    box-shadow: 2px 5px 10px gray;
+    transform: translateY(-5px);
+    transition: transform .5s, box-shadow .5s;
+}
+.MuiCardHeader-content {
+    flex: .5 1 auto !important;
+}
+
+a.MuiButtonBase-root.MuiButton-root.MuiButton-outlined {
+ color: white;
+background: rgb(3, 175, 187) !important;
+}
+
+.orange-btn {
+    background: transparent;
+    color: orange;
+    border: 1px solid orange;
+    padding: 15px;
+    margin: 10px;
+    margin-left: 0;
+    text-transform: capitalize;
+    font-size: 15px;
+    transition: background .5s, color .5s;
+}
+.orange-btn:hover {
+    background: orange;
+    color: white;
+}
+.makeStyles-root-180 {
+    width: 100% !important;
+}
+button#full-width-tab-3 ,button#full-width-tab-2, button#full-width-tab-1, button#full-width-tab-0 {
+    padding:20px;
+
+}
+button#full-width-tab-3:focus, button#full-width-tab-3:active, button#full-width-tab-2:focus, button#full-width-tab-2:active, button#full-width-tab-1:focus, button#full-width-tab-1:active, button#full-width-tab-0:focus,  button#full-width-tab-0:active, .MuiTab-textColorPrimary.Mui-selected {
+    color: rgb(3, 175, 187) !important;
+    letter-spacing: 3;
+    outline: none;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.itenary {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.itenary-container {
+    display: flex;
+}
+.itenary-container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.itenary-day {
+position: relative;
+width: 120px;
+max-width: 120px;
+min-width: 120px;
+float: left;
+border-right: 1px solid #a5a5a5;
+padding: 35px 8px 0 15px;
+text-align: right;
+font-size: 15px;
+line-height: 1;
+color: #444;
+letter-spacing: 2px;
+font-weight: 400;
+text-transform: uppercase;
+font-family: minion-pro,serif;
+}
+.itenary-day::after {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: rgb(3, 175, 187);
+    top: 36px;
+    right: -5px;
+}
+.itenary-day-last {
+    padding-bottom: 40px;
+}
+.itenary-place {
+    float: left;
+    margin: 40px 0 0 30px;
+    border-top: 1px solid #a5a5a5;
+}
+
+.itenary-place p {
+    font-size: 14px;
+    line-height: 23px;
+    margin: 25px 0 20px;
+}
+.overview {
+    border: none;
+    margin-top: 34px;
+}
+
+svg.MuiSvgIcon-root {
+    color: orange;
+}
+table {
+    margin-left: 30rem;
+}
+th {
+    font-weight: 900;
+    padding: 10px;
+}
+td {
+    padding: 10px;
+}
+.collapse-table > tr > td{
+    margin: 20px;
+    padding: 20px;
+}
+@media only screen and (min-width: 100px) and (max-width: 900px) {
+    table {
+        margin-left: 3rem;
+    }
+}
+
+#grp {
+    border: 1px solid black;
+    padding: 15px 20px;
+}
+
+.popup-container {
+    position: fixed;
+    z-index: 9000;
+    top: 30px;
+    left: 8rem;
+    right: 0;
+    bottom: 0px;
+    width: 70%;
+}
+.popup-form {
+    padding: 10%;
+    color: black;
+  }
+  @media only screen and (min-width: 100px) and (max-width: 700px) {
+    .popup-container {
+        top: 20px !important;
+        left: 5rem;
+    }
+    .popup-form {
+      padding: 20px;
+      margin-left: 0%;
+    }
+  }
+  
+.popup-form-bg {
+    position: fixed;
+    z-index: 8999;
+    background: black;
+    opacity: .5;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.cross-icon svg.MuiSvgIcon-root {
+    font-size: 35px;
+    color: orange;
+    transition: color .5s;
+}
+.cross-icon svg.MuiSvgIcon-root :hover{
+    color: black;
+    transition: color .5s;
+}
