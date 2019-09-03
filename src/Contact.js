@@ -16,8 +16,8 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(10),
   },
   textField: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
+    // marginLeft: theme.spacing(1),
+    // marginRight: theme.spacing(1),
   },
   container: {
     marginTop: theme.spacing(10),
@@ -32,6 +32,9 @@ const useStyles = makeStyles(theme => ({
     paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(8),
   },
+  button: {
+    backgroundColor: 'transparent'
+  }
 
 }));
 
@@ -42,11 +45,10 @@ function Contact() {
         <NavBar/>
         <div className={classes.container}>
         <form className={classes.container} noValidate autoComplete="off">
-      <Grid container xs={6}>
-      <Grid item xs={12} align='center'>
+      <Grid container>
+      <Grid item xs={12}>
         <h1 style={{ textAlign: 'center', letterSpacing: 8, wordSpacing: 5}}>Contact Us</h1>
         <Divider ></Divider>
-      </Grid>
       <TextField
         id="outlined-full-width"
         label="Name"
@@ -82,9 +84,10 @@ function Contact() {
         variant="outlined"
       />
       <Grid item xs={12} align='right'>
-       <Button style={{width: window.innerWidth < 700 ? '100%' : '40%',fontSize: 16,fontWeight: 400, padding: '10px'}} variant="outlined" href="#outlined-buttons" className={classes.button}>
+       <button className='orange-btn' style={{width: window.innerWidth < 700 ? '100%' : '40%',fontSize: 16,fontWeight: 400, padding: '10px'}} variant="outlined">
         Send &nbsp;&nbsp;&nbsp;<Send />
-      </Button>
+      </button>
+      </Grid>
       </Grid>
       </Grid>
       </form>

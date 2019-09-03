@@ -6,6 +6,7 @@ import AppBar from '../components/AppBar';
 import Toolbar, { styles as toolbarStyles } from '../components/Toolbar';
 import { Link as RouterLink } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
+import { Icon } from '@material-ui/core/Icon/Icon';
 
 
 const styles = theme => ({
@@ -24,7 +25,6 @@ const styles = theme => ({
 
   button: {
     margin: theme.spacing(2),
-    
   },
 
   right: {
@@ -35,7 +35,7 @@ const styles = theme => ({
   },
 
   rightLink: {
-    fontSize: 20,
+    fontSize: 12,
     color: "black",
     // marginLeft: theme.spacing(3),
    
@@ -59,21 +59,21 @@ function NavBar(props) {
             />
           </RouterLink>
   
-          {/* <div className={classes.right}>
-            <RouterLink to="/login" style={{ textDecoration: 'none' }}>
+          <div className={classes.right}>
+            <RouterLink to="/contact" style={{ textDecoration: 'none' }}>
               <Button variant="outlined"  className={clsx(classes.rightLink, classes.button)}>
-                {'Tours'}
+                {'Contact Us'}
               </Button>
             </RouterLink>
-          </div> */}
+          </div>
 
-          <div className={classes.right}>
+          {/* <div className={classes.right}>
             <RouterLink to="/angebot" style={{ textDecoration: 'none' }}>
               <Button variant="outlined"  className={clsx(classes.rightLink, classes.button)}>
                 {'Angebote'}
               </Button>
             </RouterLink>
-          </div>
+          </div> */}
           
         </Toolbar>
       </AppBar>

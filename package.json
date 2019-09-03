@@ -18,6 +18,7 @@
     "react-final-form": "latest",
     "react-router-dom": "latest",
     "react-scripts": "latest",
+    "react-slideshow-image": "^1.2.2",
     "react-swipeable-views": "^0.13.3",
     "validator": "latest"
   },

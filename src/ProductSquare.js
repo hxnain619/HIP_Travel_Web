@@ -4,10 +4,11 @@ import AppFooter from './views/AppFooter';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 
-import { Products } from './productData';
 import { Divider } from '@material-ui/core';
 import { ProductTab } from './views/ProductTabs';
 import './assets/style.css';
+import { Slideshow } from './components/Slideshow';
+import { Products } from './productData';
 
 
 const styles = theme => ({
@@ -22,6 +23,8 @@ const styles = theme => ({
   },
 })
 
+const images = ['everglades.jpg', 'key_west.jpg'];
+
 class ProductSquare extends React.Component {
   constructor() {
     super();
@@ -31,6 +34,8 @@ class ProductSquare extends React.Component {
       resized: false
     }
   }
+
+  
 
   popupCard = (show) => {
       this.setState({ popup: show})
@@ -46,7 +51,8 @@ class ProductSquare extends React.Component {
         {product ? 
         <div style={{marginTop: 100}}>
         <h6 style={{ color: 'orange',letterSpacing: 20,border: '1px solid orange', textAlign: 'center', margin: 10, padding: 10 }}>{product.title}</h6>
-        <img src={process.env.PUBLIC_URL + "/images/cards/" + String(product.display_card.cardimg)}  width='100%' alt='' />
+          }
+          {Slideshow(product.itempage.slideshow)}
         </div>
       : null}
       <div style={{
@@ -54,7 +60,7 @@ class ProductSquare extends React.Component {
         paddingBottom: 30
       }}>
       <Grid container>
-      <Grid item xs={window.innerWidth > 500 ? 8 :12} >
+      <Grid item xs={window.innerWidth > 800 ? 8 :12} >
       {product ? 
     <div>
     <h6 style={{letterSpacing: 10}}>{product.display_card.subtitle}</h6>
@@ -74,7 +80,7 @@ class ProductSquare extends React.Component {
     <button className='orange-btn'>
       Download journey PDF
     </button>
-    <button onClick={() => this.setState({ popup: true })} className='orange-btn'>
+    <button onClick={() => this.setState({ popup: true })} style={{padding: '15px 36px'}} className='orange-btn'>
         Send To a Friend
     </button>
     </div>
@@ -85,7 +91,7 @@ class ProductSquare extends React.Component {
       </Grid>}
       </Grid>
      
-    <Grid item xs={window.innerWidth > 500 ? 4 : 12}>
+    <Grid item xs={window.innerWidth > 800 ? 4 : 12}>
       <div style={{
         border: '1px solid #616161',
         marginLeft: 20,
@@ -108,8 +114,10 @@ class ProductSquare extends React.Component {
   );
  }
  componentWillMount() {
-   Products.map((product) => {
+  
+  Products.map((product) => {
     return product.id === parseInt(this.props.match.params.id) ?
+    
       this.setState({ product })
     : null;
    })

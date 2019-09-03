@@ -46,14 +46,7 @@ function TabPanel(props) {
       backgroundColor: theme.palette.background.paper,
       // width: 500,
     },
-    textField: {
-      marginLeft: theme.spacing(1.5),
-      width: window.innerWidth > 700 ? '48%' : '100%'
-    },
-    textField2: {
-      marginLeft: theme.spacing(1.5),
-      width: '48%'
-    }
+    
   }))
   
   export const ProductTab = (props) => {
@@ -118,13 +111,20 @@ function TabPanel(props) {
                  className={productDetail.itinary.length === key+1 ? 'itenary-day itenary-day-last' :'itenary-day '}>
                  DAY {data.day}
                  </div>
+                 <div style={{display: 'inline-flex' }} >
                  <div 
+                 style={{width: window.innerWidth > 700 ? '60%' : '100%'}}
                  className={productDetail.itinary.length === key+1 ? 'itenary-place itenary-place-last' :'itenary-place'} >
                   <h6 style={{    
                     marginTop: 25,
                     marginBottom: 5
                 }}>{data.where}</h6>
                   <p>{data.about}</p>
+              </div>
+            {window.innerWidth > 800 ?
+              <div style={{width: '40%', padding: '50px 10px',  paddingBottom: 5, textAlign: 'right'}}>
+                <img width='100%' style={{padding: 20}} src={process.env.PUBLIC_URL + "/images/" + String(data.img)} alt='' />
+              </div> : null}
               </div>
               </div>)
             })}
@@ -133,11 +133,11 @@ function TabPanel(props) {
           <h4>Prices are in USD, per person, based on double occupancy.</h4>
             <div className='wrap-collabsible'>
               {productDetail.dates.map((data, key) => {
-              return <div key={key}>
+              return  <div key={key}>
               <input id={`collapsible${key}`} className="toggle" type="checkbox" />
               <label htmlFor={`collapsible${key}`} className="lbl-toggle">
-                <span>{data.start}&nbsp; to &nbsp;{data.end}</span> 
-                <span style={{float: 'right'}}>{data.availability}</span>
+              <span>{data.start}&nbsp; to &nbsp;{data.end}</span> 
+              <p style={{textAlign: 'right'}}><span >{data.availability}</span></p>
               </label>
               <div className="collapsible-content">
               <div className="content-inner center">
@@ -191,21 +191,23 @@ function TabPanel(props) {
       <TextField
         id="standard-required"
         label={window.innerWidth > 700 ? "Your Name" : "Name"}
-        className={classes.textField2}
+        className='textField'
+        style={{marginRight: 10}}
         margin="normal"
         variant="outlined"
       />
       <TextField
         id="standard-required"
         label={window.innerWidth > 700 ? "Recipient's Name" : "Recipient"}
-        className={classes.textField2}
+        className='textField'
         margin="normal"
         variant="outlined"
       />
       <TextField
         id="standard-required"
         label="From"
-        className={classes.textField}
+        style={{marginRight: 10}}
+        className='textField2'
         margin="normal"
         variant="outlined"
       />
@@ -213,7 +215,7 @@ function TabPanel(props) {
       <TextField
         id="standard-required"
         label="To"
-        className={classes.textField}
+        className='textField2'
         margin="normal"
         variant="outlined"
       />

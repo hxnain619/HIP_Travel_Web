@@ -7,9 +7,6 @@
     transform: translateY(-5px);
     transition: transform .5s, box-shadow .5s;
 }
-.MuiCardHeader-content {
-    flex: .5 1 auto !important;
-}
 
 a.MuiButtonBase-root.MuiButton-root.MuiButton-outlined {
  color: white;
@@ -137,19 +134,20 @@ td {
     position: fixed;
     z-index: 9000;
     top: 30px;
-    left: 8rem;
+    left: 3rem;
     right: 0;
     bottom: 0px;
-    width: 70%;
+    width: 90%;
+    padding: 10px;
 }
 .popup-form {
-    padding: 10%;
+    padding: 50px;
     color: black;
   }
   @media only screen and (min-width: 100px) and (max-width: 700px) {
     .popup-container {
         top: 20px !important;
-        left: 5rem;
+        left: 1rem;
     }
     .popup-form {
       padding: 20px;
@@ -177,4 +175,8 @@ td {
 .cross-icon svg.MuiSvgIcon-root :hover{
     color: black;
     transition: color .5s;
+}
+
+.textField, .textField2 {
+    width: 48%;
 }
