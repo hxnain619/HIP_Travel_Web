@@ -16,7 +16,7 @@ export const Slideshow = (images) => {
         <Zoom {...zoomOutProperties}>
           {
             images.map((each, index) => {
-            return <img key={index} style={{width: "100%"}} src={process.env.PUBLIC_URL + "/images/" + String(each)} />
+            return <img key={index} style={{width: "100%", height: '100%'}} src={process.env.PUBLIC_URL + "/images/" + String(each)} />
             })
           }
         </Zoom>

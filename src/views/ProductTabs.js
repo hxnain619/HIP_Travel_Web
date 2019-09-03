@@ -163,10 +163,11 @@ function TabPanel(props) {
                     <p>How many people are travelling in your group?</p>
                     <Grid container>
                       <Grid item xs={window.innerWidth > 700 ? 8 : 12} align='left'>
-                      <input type='number' placeholder='e.g. 2' id='grp'   />
+                      <input type='number' placeholder='e.g. 2' style={{width: window.innerWidth < 500 ? '100%' : 'inherit' }} id='grp'   />
                       </Grid>
-                      <Grid item xs={window.innerWidth > 700 ? 4 : 12} align='right'>
-                      <button  className='orange-btn'>Request Booking</button>
+                      <Grid item xs={window.innerWidth > 700 ? 4 : 12} 
+                      style={{width: window.innerWidth < 500 ? '100%' : 'inherit'}} align='right'>
+                      <button  style={{marginRight: window.innerWidth < 500 ? 0 : 'inherit' }} className='orange-btn'>Request Booking</button>
                       </Grid>
                     </Grid>
                     </div>

@@ -4,7 +4,8 @@ import AppFooter from './views/AppFooter';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 
-import { Divider } from '@material-ui/core';
+import { Divider, Icon } from '@material-ui/core';
+import Call from '@material-ui/icons/Call';
 import { ProductTab } from './views/ProductTabs';
 import './assets/style.css';
 import { Slideshow } from './components/Slideshow';
@@ -50,8 +51,7 @@ class ProductSquare extends React.Component {
       {popup ? <div className='popup-form-bg'></div> : null }
         {product ? 
         <div style={{marginTop: 100}}>
-        <h6 style={{ color: 'orange',letterSpacing: 20,border: '1px solid orange', textAlign: 'center', margin: 10, padding: 10 }}>{product.title}</h6>
-          }
+        {/* <h6 style={{ color: 'orange',letterSpacing: 20,border: '1px solid orange', textAlign: 'center', margin: 10, padding: 10 }}>{product.title}</h6> */}
           {Slideshow(product.itempage.slideshow)}
         </div>
       : null}
@@ -63,7 +63,7 @@ class ProductSquare extends React.Component {
       <Grid item xs={window.innerWidth > 800 ? 8 :12} >
       {product ? 
     <div>
-    <h6 style={{letterSpacing: 10}}>{product.display_card.subtitle}</h6>
+    {/* <h6 style={{letterSpacing: 10}}>{product.display_card.subtitle}</h6> */}
     <h1 style={{letterSpacing: 5}}>{product.title}</h1>
     <Divider></Divider>
     <div style={{
@@ -77,10 +77,10 @@ class ProductSquare extends React.Component {
       padding: 10,
       paddingLeft: 0
     }}>{product.display_card.price}</span></h4>
-    <button className='orange-btn'>
+    <button className='orange-btn' style={{width: window.innerWidth < 600 ? '100%' : 'inherit'}}>
       Download journey PDF
     </button>
-    <button onClick={() => this.setState({ popup: true })} style={{padding: '15px 36px'}} className='orange-btn'>
+    <button onClick={() => this.setState({ popup: true })} style={{padding: '15px 36px', width: window.innerWidth < 600 ? '100%' : 'inherit'}} className='orange-btn'>
         Send To a Friend
     </button>
     </div>
@@ -94,11 +94,14 @@ class ProductSquare extends React.Component {
     <Grid item xs={window.innerWidth > 800 ? 4 : 12}>
       <div style={{
         border: '1px solid #616161',
-        marginLeft: 20,
+        marginLeft: window.innerWidth > 700 ? 20 : 0,
         paddingBottom: 10,
       }}>
-      <h5 style={{padding: 25, textTransform: 'capitalize'}}>Included with {product.title}</h5>
-        <Divider></Divider>
+      <p style={{padding: '30px', paddingBottom: 0}}> <Call />&nbsp; &nbsp; <b style={{fontSize: 16}}> 800 903 1233 </b><br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       or speak to your travel professional</p>
+      <Divider></Divider>
+      <h5 style={{padding: 15, textTransform: 'capitalize', textAlign: 'center'}}>Included with {product.title}</h5>
         <div style={{padding: 20, fontSize: 12, textTransform: 'capitalize',  letterSpacing: 1, wordSpacing: 3, color: '#616161'}}>
         {product.itempage.included.map((data, key) => {
             return <p key={key}>{data+'.'}</p>

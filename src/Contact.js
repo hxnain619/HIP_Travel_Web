@@ -48,6 +48,7 @@ function Contact() {
       <Grid container>
       <Grid item xs={12}>
         <h1 style={{ textAlign: 'center', letterSpacing: 8, wordSpacing: 5}}>Contact Us</h1>
+        <div style={{padding : window.innerWidth < 500 ? 20 : 'inherit'}} >
         <Divider ></Divider>
       <TextField
         id="outlined-full-width"
@@ -88,6 +89,7 @@ function Contact() {
         Send &nbsp;&nbsp;&nbsp;<Send />
       </button>
       </Grid>
+      </div>
       </Grid>
       </Grid>
       </form>
