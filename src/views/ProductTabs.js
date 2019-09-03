@@ -119,7 +119,13 @@ function TabPanel(props) {
                     marginTop: 25,
                     marginBottom: 5
                 }}>{data.where}</h6>
-                  <p>{data.about}</p>
+                  <p style={{
+                    fontSize: window.innerWidth < 500 ? 10 : 'inherit'
+                  }}>
+                  {window.innerWidth < 500 ?
+                  <img width='100%' height='100%' style={{paddingBottom: 10}} src={process.env.PUBLIC_URL + "/images/" + String(data.img)} alt='' />
+                  : null}      
+                  {data.about}</p>
               </div>
             {window.innerWidth > 800 ?
               <div style={{width: '40%', padding: '50px 10px',  paddingBottom: 5, textAlign: 'right'}}>
