@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Link from '@material-ui/core/Link';
+import {Link} from 'react-router-dom';
 import Container from '@material-ui/core/Container';
 import Typography from '../components/Typography';
 import TextField from '../components/TextField';
@@ -77,10 +77,10 @@ export default function AppFooter() {
               spacing={2}
             >
               <Grid item className={classes.icons}>
-                <a href="" className={classes.icon}>
+                <a href='#!' className={classes.icon}>
                   <img src={process.env.PUBLIC_URL + "/images/appFooterFacebook.png"}  alt="Facebook" />
                 </a>
-                <a href="" className={classes.icon}>
+                <a href='#!' className={classes.icon}>
                   <img src={process.env.PUBLIC_URL + "/images/appFooterTwitter.png"} alt="Twitter" />
                 </a>
               </Grid>
@@ -93,10 +93,10 @@ export default function AppFooter() {
             </Typography>
             <ul className={classes.list}>
               <li className={classes.listItem}>
-                <Link href="/premium-themes/onepirate/terms/">Terms</Link>
+                <Link to="/premium-themes/onepirate/terms/">Terms</Link>
               </li>
               <li className={classes.listItem}>
-                <Link href="/premium-themes/onepirate/privacy/">Privacy</Link>
+                <Link to="/premium-themes/onepirate/privacy/">Privacy</Link>
               </li>
             </ul>
           </Grid>
@@ -106,10 +106,10 @@ export default function AppFooter() {
             </Typography>
             <ul className={classes.list}>
               <li className={classes.listItem}>
-                <Link href='/contact' >Contact Us</Link>
+                <Link to='/contact' >Contact Us</Link>
               </li>
               <li className={classes.listItem}>
-                <Link href="/premium-themes/onepirate/privacy/">About Hpi</Link>
+                <Link to="/premium-themes/onepirate/privacy/">About Hpi</Link>
               </li>
             </ul>
           </Grid>

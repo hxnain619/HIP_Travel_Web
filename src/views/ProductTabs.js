@@ -111,7 +111,7 @@ function TabPanel(props) {
                  className={productDetail.itinary.length === key+1 ? 'itenary-day itenary-day-last' :'itenary-day '}>
                  DAY {data.day}
                  </div>
-                 <div style={{display: 'inline-flex' }} >
+                 <div style={{display: 'inline-flex', width: '100%' }} >
                  <div 
                  style={{width: window.innerWidth > 700 ? '60%' : '100%'}}
                  className={productDetail.itinary.length === key+1 ? 'itenary-place itenary-place-last' :'itenary-place'} >
