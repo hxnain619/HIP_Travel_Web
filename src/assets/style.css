@@ -72,6 +72,15 @@ font-weight: 400;
 text-transform: uppercase;
 font-family: minion-pro,serif;
 }
+@media only screen and (min-width: 200px) and (max-width: 500px) {
+    .itenary-day {
+        width: 80px;
+        max-width: 80px;
+        min-width: 80px;
+        text-align: left;
+        letter-spacing: 1px;
+    }
+}
 .itenary-day::after {
     display: block;
     content: "";
