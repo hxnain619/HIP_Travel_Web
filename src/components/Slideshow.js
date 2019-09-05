@@ -12,8 +12,8 @@ const zoomOutProperties = {
 
 export const Slideshow = (images) => {
     return (
-      <div className="slide-container" style={{padding: 20}}>
-        <Zoom {...zoomOutProperties}>
+      <div className="slide-container" style={{padding: window.innerWidth > 700 ? '20px 80px' : '20px'}}>
+        <Zoom {...zoomOutProperties} >
           {
             images.map((each, index) => {
             return <img key={index} style={{width: "100%", height: '100%'}} src={process.env.PUBLIC_URL + "/images/" + String(each)} />

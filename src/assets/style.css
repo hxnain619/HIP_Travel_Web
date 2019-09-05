@@ -189,3 +189,10 @@ td {
 .textField, .textField2 {
     width: 48%;
 }
+
+a {
+    color: black;
+}
+a:hover {
+    color: black;
+}
